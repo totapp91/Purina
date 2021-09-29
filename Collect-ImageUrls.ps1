@@ -14,7 +14,10 @@ foreach($_ in $csv) {
     
     foreach($Image in $Images) {
         
-        $Urls += $Image.Fullname
+        $result = $Image.FullName.Replace("C:\Users\attila.toth\Documents\Azure DevOps\Web development\Purina", "https://github.com/totapp91/Purina/raw/master")
+        $result = $result.Replace("\", "/")
+        $result = $result.Replace(" ", "%20")
+        $Urls += $result
         $Urls += "|"
 
     }
@@ -25,4 +28,8 @@ foreach($_ in $csv) {
     Remove-Variable Urls
     
     
+}
+
+foreach ($_ in $csv) {
+    Export-Csv -InputObject $_ -Path "C:\Users\attila.toth\Documents\Azure DevOps\Web development\Purina\PurinaFeed_images.csv" -Append -Encoding utf8
 }

@@ -31,5 +31,5 @@ foreach($_ in $csv) {
 }
 
 foreach ($_ in $csv) {
-    Export-Csv -InputObject $_ -Path "C:\Users\attila.toth\Documents\Azure DevOps\Web development\Purina\PurinaFeed_Pngimages.csv" -Append -Encoding utf8
+    Export-Csv -InputObject $_ -Path "C:\Users\attila.toth\Documents\Azure DevOps\Web development\Purina\PurinaFeed_images.csv" -Append -Encoding utf8
 }
